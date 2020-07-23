@@ -39,4 +39,9 @@ public class GuessNumber {
         }
         return count;
     }
+
+    public Boolean isValid(String inputNumber) {
+        if(inputNumber.length() < 4) return false;
+        return true;
+    }
 }
