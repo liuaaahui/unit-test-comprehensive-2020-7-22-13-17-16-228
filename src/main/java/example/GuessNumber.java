@@ -41,7 +41,7 @@ public class GuessNumber {
     }
 
     public Boolean isValid(String inputNumber) {
-        if(inputNumber.length() < 4) return false;
+        if(inputNumber.length() != 4) return false;
         return true;
     }
 }
