@@ -90,4 +90,15 @@ public class GuessNumberTest {
         //then
         Assertions.assertEquals(false,actual);
     }
+
+    @Test
+    void should_return_false_when_input_has_same_number_given_1223() {
+        //given
+        String inputNumber = "1223";
+        GuessNumber guessNumber = new GuessNumber("1234");
+        //when
+        Boolean actual = guessNumber.isValid(inputNumber);
+        //then
+        Assertions.assertEquals(false,actual);
+    }
 }
