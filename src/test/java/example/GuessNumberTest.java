@@ -79,4 +79,15 @@ public class GuessNumberTest {
         //then
         Assertions.assertEquals(false,actual);
     }
+
+    @Test
+    void should_return_false_when_input_length_is_longer_than_4_given_12345() {
+        //given
+        String inputNumber = "12345";
+        GuessNumber guessNumber = new GuessNumber("1234");
+        //when
+        Boolean actual = guessNumber.isValid(inputNumber);
+        //then
+        Assertions.assertEquals(false,actual);
+    }
 }
