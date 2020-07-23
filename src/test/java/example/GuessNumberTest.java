@@ -47,4 +47,15 @@ public class GuessNumberTest {
         //then
         Assertions.assertEquals("0A4B",actual);
     }
+    @Test
+    void should_return_0A2B_when_answer_is_1234_given_2178() {
+        //given
+        String inputNumber = "2178";
+        GuessNumber guessNumber = new GuessNumber("1234");
+        //when
+        String actual = guessNumber.guess(inputNumber);
+        //then
+        Assertions.assertEquals("0A2B",actual);
+    }
+
 }
