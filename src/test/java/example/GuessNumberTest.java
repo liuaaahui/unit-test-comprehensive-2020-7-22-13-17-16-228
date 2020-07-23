@@ -68,4 +68,15 @@ public class GuessNumberTest {
         //then
         Assertions.assertEquals("1A0B",actual);
     }
+
+    @Test
+    void should_return_false_when_input_length_is_shouter_than_4_given_123() {
+        //given
+        String inputNumber = "123";
+        GuessNumber guessNumber = new GuessNumber("1234");
+        //when
+        Boolean actual = guessNumber.isValid(inputNumber);
+        //then
+        Assertions.assertEquals(false,actual);
+    }
 }
