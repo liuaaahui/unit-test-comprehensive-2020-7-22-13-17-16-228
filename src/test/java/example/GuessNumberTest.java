@@ -8,10 +8,10 @@ public class GuessNumberTest {
     void should_return_4A0B_when_answer_is_1234_given_1234() {
         //given
         String inputNumber = "1234";
-        //when
         GuessNumber guessNumber = new GuessNumber("1234");
-        //then
+        //when
         String actual = guessNumber.guess(inputNumber);
+        //then
         Assertions.assertEquals("4A0B",actual);
     }
 
@@ -19,10 +19,10 @@ public class GuessNumberTest {
     void should_return_2A2B_when_answer_is_1234_given_1243() {
         //given
         String inputNumber = "1243";
-        //when
         GuessNumber guessNumber = new GuessNumber("1234");
-        //then
+        //when
         String actual = guessNumber.guess(inputNumber);
+        //then
         Assertions.assertEquals("2A2B",actual);
     }
 }
