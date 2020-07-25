@@ -2,8 +2,7 @@ package example;
 
 public class ValidNumber {
     public Boolean isValid(String inputNumber) {
-        if (isAllNumber(inputNumber)) return false;
-        if (inputNumber.length() == 4) {
+        if (isAllNumber(inputNumber) && inputNumber.length() == 4) {
             for (int i = 0; i < inputNumber.length(); i++) {
                 for (int j = 0; j < inputNumber.length(); j++) {
                     if (inputNumber.charAt(i) == inputNumber.charAt(j)) {

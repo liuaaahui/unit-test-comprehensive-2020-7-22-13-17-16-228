@@ -11,9 +11,10 @@ public class GuessNumberTest {
     void should_return_4A0B_when_answer_is_1234_given_1234() {
         //given
         String inputNumber = "1234";
+        String answer = "1234";
         AnswerGenerater answerGenerater = mock(AnswerGenerater.class);
 //        given(answerGenerater.generate());
-        when(answerGenerater.generate()).thenReturn("1234");
+        when(answerGenerater.generate()).thenReturn(answer);
         GuessNumber guessNumber = new GuessNumber(answerGenerater);
         //when
         String actual = guessNumber.guess(inputNumber);
@@ -25,8 +26,9 @@ public class GuessNumberTest {
     void should_return_2A2B_when_answer_is_1234_given_1243() {
         //given
         String inputNumber = "1243";
+        String answer = "1234";
         AnswerGenerater answerGenerater = mock(AnswerGenerater.class);
-        when(answerGenerater.generate()).thenReturn("1234");
+        when(answerGenerater.generate()).thenReturn(answer);
         GuessNumber guessNumber = new GuessNumber(answerGenerater);
         //when
         String actual = guessNumber.guess(inputNumber);
@@ -38,8 +40,9 @@ public class GuessNumberTest {
     void should_return_0A0B_when_answer_is_1234_given_5678() {
         //given
         String inputNumber = "5678";
+        String answer = "1234";
         AnswerGenerater answerGenerater = mock(AnswerGenerater.class);
-        when(answerGenerater.generate()).thenReturn("1234");
+        when(answerGenerater.generate()).thenReturn(answer);
         GuessNumber guessNumber = new GuessNumber(answerGenerater);
         //when
         String actual = guessNumber.guess(inputNumber);
@@ -51,8 +54,9 @@ public class GuessNumberTest {
     void should_return_0A4B_when_answer_is_1234_given_4321() {
         //given
         String inputNumber = "4321";
+        String answer = "1234";
         AnswerGenerater answerGenerater = mock(AnswerGenerater.class);
-        when(answerGenerater.generate()).thenReturn("1234");
+        when(answerGenerater.generate()).thenReturn(answer);
         GuessNumber guessNumber = new GuessNumber(answerGenerater);
         //when
         String actual = guessNumber.guess(inputNumber);
@@ -64,8 +68,9 @@ public class GuessNumberTest {
     void should_return_0A2B_when_answer_is_1234_given_2178() {
         //given
         String inputNumber = "2178";
+        String answer = "1234";
         AnswerGenerater answerGenerater = mock(AnswerGenerater.class);
-        when(answerGenerater.generate()).thenReturn("1234");
+        when(answerGenerater.generate()).thenReturn(answer);
         GuessNumber guessNumber = new GuessNumber(answerGenerater);
         //when
         String actual = guessNumber.guess(inputNumber);
@@ -77,8 +82,9 @@ public class GuessNumberTest {
     void should_return_1A0B_when_answer_is_1234_given_1567() {
         //given
         String inputNumber = "1567";
+        String answer = "1234";
         AnswerGenerater answerGenerater = mock(AnswerGenerater.class);
-        when(answerGenerater.generate()).thenReturn("1234");
+        when(answerGenerater.generate()).thenReturn(answer);
         GuessNumber guessNumber = new GuessNumber(answerGenerater);
         //when
         String actual = guessNumber.guess(inputNumber);
@@ -90,11 +96,9 @@ public class GuessNumberTest {
     void should_return_false_when_input_length_is_shouter_than_4_given_123() {
         //given
         String inputNumber = "123";
-        AnswerGenerater answerGenerater = mock(AnswerGenerater.class);
-        when(answerGenerater.generate()).thenReturn("1234");
-        GuessNumber guessNumber = new GuessNumber(answerGenerater);
+        ValidNumber validNumber = new ValidNumber();
         //when
-        Boolean actual = guessNumber.isValid(inputNumber);
+        Boolean actual = validNumber.isValid(inputNumber);
         //then
         Assertions.assertEquals(false, actual);
     }
@@ -103,11 +107,9 @@ public class GuessNumberTest {
     void should_return_false_when_input_length_is_longer_than_4_given_12345() {
         //given
         String inputNumber = "12345";
-        AnswerGenerater answerGenerater = mock(AnswerGenerater.class);
-        when(answerGenerater.generate()).thenReturn("1234");
-        GuessNumber guessNumber = new GuessNumber(answerGenerater);
+        ValidNumber validNumber = new ValidNumber();
         //when
-        Boolean actual = guessNumber.isValid(inputNumber);
+        Boolean actual = validNumber.isValid(inputNumber);
         //then
         Assertions.assertEquals(false, actual);
     }
@@ -116,12 +118,21 @@ public class GuessNumberTest {
     void should_return_false_when_input_has_same_number_given_1223() {
         //given
         String inputNumber = "1223";
-        AnswerGenerater answerGenerater = mock(AnswerGenerater.class);
-        when(answerGenerater.generate()).thenReturn("1234");
-        GuessNumber guessNumber = new GuessNumber(answerGenerater);
+        ValidNumber validNumber = new ValidNumber();
         //when
-        Boolean actual = guessNumber.isValid(inputNumber);
+        Boolean actual = validNumber.isValid(inputNumber);
         //then
         Assertions.assertEquals(false, actual);
+    }
+
+    @Test
+    void should_return_true_when_generate_answer_given_created_random_answer() {
+        //given
+        AnswerGenerater createdAnswer = new CreateAnswer();
+        ValidNumber validNumber = new ValidNumber();
+        //when
+        boolean actual = validNumber.isValid(createdAnswer.generate());
+        //then
+        Assertions.assertTrue(actual);
     }
 }
