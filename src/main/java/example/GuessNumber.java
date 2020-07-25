@@ -2,13 +2,15 @@ package example;
 
 public class GuessNumber {
     private final String answer;
+    private ValidNumber validNumber;
 
     public GuessNumber(AnswerGenerater answerGenerater) {
         this.answer = answerGenerater.generate();
+        validNumber = new ValidNumber();
     }
 
     public String guess(String inputNumber) {
-        if (!isValid(inputNumber)) return "Wrong Input，Input again";
+        if (!validNumber.isValid(inputNumber)) return "Wrong Input，Input again";
         if (inputNumber.equals(answer)) {
             return "4A0B";
         }
@@ -39,20 +41,5 @@ public class GuessNumber {
             }
         }
         return count;
-    }
-
-    public Boolean isValid(String inputNumber) {
-        if (inputNumber.length() == 4) {
-            for (int i = 0; i < this.answer.length(); i++) {
-                for (int j = 0; j < this.answer.length(); j++) {
-                    if (inputNumber.charAt(i) == inputNumber.charAt(j)) {
-                        if (i == j) continue;
-                        return false;
-                    }
-                }
-            }
-            return true;
-        }
-        return false;
     }
 }
