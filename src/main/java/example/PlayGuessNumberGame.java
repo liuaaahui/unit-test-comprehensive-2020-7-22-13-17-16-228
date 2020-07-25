@@ -9,10 +9,14 @@ public class PlayGuessNumberGame {
         Scanner scanner = new Scanner(System.in);
         AnswerGenerater answerGenerater = new CreateAnswer();
         GuessNumber guessNumber = new GuessNumber(answerGenerater);
-        for(int i = 0;i<6;i++){
-            String inputNumber = scanner.next();
+        for (int i = 0; i < 6; i++) {
+            String inputNumber = scanner.nextLine().replaceAll(" ","");
             System.out.println(guessNumber.guess(inputNumber));
-            if(guessNumber.guess(inputNumber) == "4A0B") break;
+            if (guessNumber.guess(inputNumber) == "4A0B"){
+                System.out.println("YOU WIN!");
+                break;
+            }
         }
+        System.out.println("GAME OVER!");
     }
 }
