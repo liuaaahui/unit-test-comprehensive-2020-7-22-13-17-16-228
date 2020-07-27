@@ -2,6 +2,8 @@ package example;
 
 public class GuessNumber {
     private static final String ERROR_MESSAGE = "Wrong Input，Input again";
+    private static final String STRING_A = "A";
+    private static final String STRING_B = "B";
     private final String answer;
     private ValidNumber validNumber;
 
@@ -18,7 +20,7 @@ public class GuessNumber {
     private String createResult(String answer, String inputNumber) {
         int sameNum = sameNumber(answer, inputNumber);
         int samePos = samePosition(answer, inputNumber);
-        return samePos + "A" + (sameNum - samePos) + "B";
+        return samePos + STRING_A + (sameNum - samePos) + STRING_B;
     }
 
     private int samePosition(String answer, String inputNumber) {
