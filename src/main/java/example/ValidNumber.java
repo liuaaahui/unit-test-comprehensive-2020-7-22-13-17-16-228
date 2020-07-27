@@ -17,9 +17,9 @@ public class ValidNumber {
     }
 
     private boolean isAllNumber(String inputNumber) {
-        char inputNum[] = inputNumber.toCharArray();
-        for (int i = 0; i < inputNumber.length(); i++) {
-            if (!Character.isDigit(inputNum[i])) {
+        char inputNumbers[] = inputNumber.toCharArray();
+        for (int inputNumIndex = 0; inputNumIndex < inputNumber.length(); inputNumIndex++) {
+            if (!Character.isDigit(inputNumbers[inputNumIndex])) {
                 return false;
             }
         }
