@@ -1,6 +1,7 @@
 package example;
 
 public class GuessNumber {
+    private static final String ERROR_MESSAGE = "Wrong Input，Input again";
     private final String answer;
     private ValidNumber validNumber;
 
@@ -10,7 +11,7 @@ public class GuessNumber {
     }
 
     public String guess(String inputNumber) {
-        if (!validNumber.isValid(inputNumber)) return "Wrong Input，Input again";
+        if (!validNumber.isValid(inputNumber)) return ERROR_MESSAGE;
         if (inputNumber.equals(answer)) {
             return "4A0B";
         }
