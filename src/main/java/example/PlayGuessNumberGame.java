@@ -10,6 +10,7 @@ public class PlayGuessNumberGame {
     private static final int largeTimes = 6;
     private static final String WIN_NUMBER = "4A0B";
     private static final String WIN_MESSAGE = "YOU WIN!";
+    private static final String GAME_OVER = "GAME OVER!";
 
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
@@ -23,6 +24,6 @@ public class PlayGuessNumberGame {
                 break;
             }
         }
-        System.out.println("GAME OVER!");
+        System.out.println(GAME_OVER);
     }
 }
