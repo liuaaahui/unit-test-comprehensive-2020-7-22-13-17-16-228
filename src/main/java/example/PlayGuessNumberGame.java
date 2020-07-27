@@ -11,12 +11,13 @@ public class PlayGuessNumberGame {
     private static final String WIN_NUMBER = "4A0B";
     private static final String WIN_MESSAGE = "YOU WIN!";
     private static final String GAME_OVER = "GAME OVER!";
+    private static final int FIRST_TIME = 0;
 
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         AnswerGenerater answerGenerater = new CreateAnswer();
         GuessNumber guessNumber = new GuessNumber(answerGenerater);
-        for (int times = 0; times < largeTimes; times++) {
+        for (int times = FIRST_TIME; times < largeTimes; times++) {
             String inputNumber = scanner.nextLine().replaceAll(SPACE_PATTERN, NULL_PATTERN);
             System.out.println(guessNumber.guess(inputNumber));
             if (guessNumber.guess(inputNumber) == WIN_NUMBER){
