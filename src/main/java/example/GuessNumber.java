@@ -12,9 +12,6 @@ public class GuessNumber {
 
     public String guess(String inputNumber) {
         if (!validNumber.isValid(inputNumber)) return ERROR_MESSAGE;
-        if (inputNumber.equals(answer)) {
-            return "4A0B";
-        }
         return createResult(answer, inputNumber);
     }
 
