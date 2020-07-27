@@ -3,10 +3,10 @@ package example;
 public class ValidNumber {
     public Boolean isValid(String inputNumber) {
         if (isAllNumber(inputNumber) && inputNumber.length() == 4) {
-            for (int i = 0; i < inputNumber.length(); i++) {
-                for (int j = 0; j < inputNumber.length(); j++) {
-                    if (inputNumber.charAt(i) == inputNumber.charAt(j)) {
-                        if (i == j) continue;
+            for (int inputNumberIndex = 0; inputNumberIndex < inputNumber.length(); inputNumberIndex++) {
+                for (int innerInputNumberIndex = 0; innerInputNumberIndex < inputNumber.length(); innerInputNumberIndex++) {
+                    if (inputNumber.charAt(inputNumberIndex) == inputNumber.charAt(innerInputNumberIndex)) {
+                        if (inputNumberIndex == innerInputNumberIndex) continue;
                         return false;
                     }
                 }
