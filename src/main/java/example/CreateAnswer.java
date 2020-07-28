@@ -10,20 +10,20 @@ public class CreateAnswer implements AnswerGenerater {
     @Override
     public String generate() {
         Random random = new Random();
-        int tag[] = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
-        String fourNumber = "";
-        int tempIndex = 0;
+        int[] tag = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
+        StringBuilder fourNumber = new StringBuilder();
+        int tempIndex;
         while (fourNumber.length() != LENGTH) {
 
             tempIndex = random.nextInt(BOUND_NUMBER);
 
             if (tag[tempIndex] == 0) {
-                fourNumber += tempIndex;
+                fourNumber.append(tempIndex);
                 tag[tempIndex] = 1;
             }
         }
         //TODO DELETE
         System.out.println(fourNumber);
-        return fourNumber;
+        return fourNumber.toString();
     }
 }
