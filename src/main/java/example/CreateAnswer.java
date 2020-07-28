@@ -22,8 +22,6 @@ public class CreateAnswer implements AnswerGenerater {
                 tag[tempIndex] = 1;
             }
         }
-        //TODO DELETE
-        System.out.println(fourNumber);
         return fourNumber.toString();
     }
 }
