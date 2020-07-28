@@ -12,15 +12,14 @@ public class CreateAnswer implements AnswerGenerater {
         Random random = new Random();
         int tag[] = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
         String fourNumber = "";
-        //TODO NAMING
-        int temp = 0;
+        int tempIndex = 0;
         while (fourNumber.length() != LENGTH) {
 
-            temp = random.nextInt(BOUND_NUMBER);
+            tempIndex = random.nextInt(BOUND_NUMBER);
 
-            if (tag[temp] == 0) {
-                fourNumber += temp;
-                tag[temp] = 1;
+            if (tag[tempIndex] == 0) {
+                fourNumber += tempIndex;
+                tag[tempIndex] = 1;
             }
         }
         //TODO DELETE
