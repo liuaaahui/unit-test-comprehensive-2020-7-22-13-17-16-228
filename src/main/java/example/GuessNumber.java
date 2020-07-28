@@ -5,7 +5,7 @@ public class GuessNumber {
     private static final String STRING_A = "A";
     private static final String STRING_B = "B";
     private final String answer;
-    private ValidNumber validNumber;
+    private final ValidNumber validNumber;
 
     public GuessNumber(AnswerGenerater answerGenerater) {
         this.answer = answerGenerater.generate();
@@ -18,6 +18,7 @@ public class GuessNumber {
     }
 
     private String createResult(String answer, String inputNumber) {
+        // TODO NAMING
         int sameNum = sameNumber(answer, inputNumber);
         int samePos = samePosition(answer, inputNumber);
         return samePos + STRING_A + (sameNum - samePos) + STRING_B;
@@ -25,6 +26,7 @@ public class GuessNumber {
 
     private int samePosition(String answer, String inputNumber) {
         int count = 0;
+        //TODO NAMING
         for (int i = 0; i < answer.length(); i++) {
             if (answer.charAt(i) == inputNumber.charAt(i)) {
                 count++;
@@ -35,6 +37,7 @@ public class GuessNumber {
 
     private int sameNumber(String answer, String inputNumber) {
         int count = 0;
+        //TODO NAMING
         for (int i = 0; i < answer.length(); i++) {
             if (answer.indexOf(inputNumber.charAt(i)) != -1) {
                 count++;
