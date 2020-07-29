@@ -18,28 +18,25 @@ public class GuessNumber {
     }
 
     private String createResult(String answer, String inputNumber) {
-        // TODO NAMING
-        int sameNum = sameNumber(answer, inputNumber);
-        int samePos = samePosition(answer, inputNumber);
-        return samePos + STRING_A + (sameNum - samePos) + STRING_B;
+        int sameNumber = findSameNumber(answer, inputNumber);
+        int samePosition = findSamePosition(answer, inputNumber);
+        return samePosition + STRING_A + (sameNumber - samePosition) + STRING_B;
     }
 
-    private int samePosition(String answer, String inputNumber) {
+    private int findSamePosition(String answer, String inputNumber) {
         int count = 0;
-        //TODO NAMING
-        for (int i = 0; i < answer.length(); i++) {
-            if (answer.charAt(i) == inputNumber.charAt(i)) {
+        for (int index = 0; index < answer.length(); index++) {
+            if (answer.charAt(index) == inputNumber.charAt(index)) {
                 count++;
             }
         }
         return count;
     }
 
-    private int sameNumber(String answer, String inputNumber) {
+    private int findSameNumber(String answer, String inputNumber) {
         int count = 0;
-        //TODO NAMING
-        for (int i = 0; i < answer.length(); i++) {
-            if (answer.indexOf(inputNumber.charAt(i)) != -1) {
+        for (int index = 0; index < answer.length(); index++) {
+            if (answer.indexOf(inputNumber.charAt(index)) != -1) {
                 count++;
             }
         }
